@@ -20,6 +20,7 @@ $(function() {
          * the rest of this project. What happens when you change
          * allFeeds in app.js to be an empty array and refresh the
          * page?
+         -------It displays 1 failure.
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
@@ -31,7 +32,13 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+         it('has url', function(){
+            allFeeds.forEach(function(item, i){                
+                console.log(item.url);
+                expect(item.url).toBeDefined();
+                expect(item.url).not.toBe('');
+            })
+         })
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
