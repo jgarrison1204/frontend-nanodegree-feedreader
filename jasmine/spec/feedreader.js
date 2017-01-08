@@ -36,8 +36,8 @@ $(function() {
             allFeeds.forEach(function(item, i){                
                 expect(item.url).toBeDefined();
                 expect(item.url).not.toBe('');
-            })
-         })         
+            });
+         });         
 
         /* Loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -47,8 +47,8 @@ $(function() {
             allFeeds.forEach(function(item, i){                
                 expect(item.name).toBeDefined();
                 expect(item.name).not.toBe('');
-            })
-         })
+            });
+         });
     });
 
 
@@ -59,7 +59,7 @@ $(function() {
          */
          it("closed by default", function(){
             expect(body.hasClass("menu-hidden")).toBe(true);
-         })
+         });
          /* Menu changes visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
@@ -73,7 +73,7 @@ $(function() {
             menu.click();
             expect(body.hasClass('menu-hidden')).toBe(true);
         });
-    })
+    });
 
     describe('Initial Entries', function() {
         /* loadFeed function is called and completes its work, there is at least
@@ -98,7 +98,7 @@ $(function() {
         beforeEach(function(done) {
             loadFeed(0, function(){
                 feed1 = $('.feed .entry').find('h2')[0].textContent;
-                loadFeed(1, done)
+                loadFeed(1, done);
             });
         });
 
